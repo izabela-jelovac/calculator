@@ -116,6 +116,7 @@ function formatOperand(operand) {
   if (operand == null) return;
   const [integer, decimal] = operand.split(".");
   if (decimal == null) return INTEGER_FORMATER.format(integer);
+  return `${INTEGER_FORMATER.format(integer)}.${decimal}`;
 }
 function App() {
   const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(
